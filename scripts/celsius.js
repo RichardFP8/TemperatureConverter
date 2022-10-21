@@ -9,9 +9,15 @@ function init() {
     convert.onclick = conversionC_toF;
 }
 //access, extract, change input; compute and return number 
-function conversionC_toF(){
+function conversionC_toF() {
     const getCelsius = Number(document.getElementById("celsius").value);
     const answer = document.getElementById("toFahrenheit");
-    let toFahrenheit = ( (9 / 5) * getCelsius ) + 32 ;
-    answer.value = toFahrenheit.toFixed(2);
+    if (isNaN(getCelsius)) {
+        answer.value = "A number, that simple";
+        return;
+    }
+    else {
+        let toFahrenheit = ((9 / 5) * getCelsius) + 32;
+        answer.value = toFahrenheit.toFixed(2);
+    }
 }
